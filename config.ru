@@ -1,8 +1,12 @@
-require 'bundler'
-Bundler.require
-
-# Cette ligne est MAGIQUE : elle dit à Ruby d'aller chercher dans le dossier lib
+# On ajoute le dossier 'lib' au chemin de recherche des fichiers (LOAD_PATH)
+# Cela permet de faire 'require gossip' ou 'require controller' sans chemin complexe
 $:.unshift File.expand_path("./../lib", __FILE__)
 
-require 'controller' # Ruby va chercher lib/controller.rb grâce à la ligne du dessus
+require 'bundler' # On appelle le gestionnaire de gems
+Bundler.require   # On demande de charger toutes les gems du Gemfile (Sinatra, CSV, etc.)
+
+# On charge spécifiquement notre contrôleur
+require 'controller'
+
+# On dit au serveur de lancer l'application définie dans la classe ApplicationController
 run ApplicationController

@@ -1,0 +1,17 @@
+<html>
+  <head><title>Détail du potin</title></head>
+  <body>
+    <%# On affiche l'ID récupéré depuis le controller %>
+    <h1>Potin n°<%= id %></h1>
+    
+    <p>
+      <%# On utilise les attributs de l'objet gossip passé en local %>
+      <strong>Auteur :</strong> <%= gossip.author %><br/>
+      <strong>Message :</strong> <%= gossip.content %>
+    </p>
+    
+    <hr>
+    <%# Lien pour revenir à la liste globale %>
+    <a href="/">Retour à la liste des potins</a>
+  </body>
+</html>
